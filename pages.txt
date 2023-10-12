@@ -1,0 +1,207 @@
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$((((((((CUSTOMERS PAGE)))))))))$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$((((((((CUSTOMERS PAGE)))))))))$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$((((((((CUSTOMERS PAGE)))))))))$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$((((((((CUSTOMERS PAGE)))))))))$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+package pageobject;
+
+import common.LoanAppHelper;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+
+public class CustomersPage {
+
+    // this is a constructor
+    public CustomersPage(WebDriver driver){
+        PageFactory.initElements(driver, this);
+    }
+
+    //LOCATORS
+    //'Actions' button
+    @FindBy(how = How.XPATH, using = "//td/table/tbody/tr/td[2]/em/button")
+    private WebElement buttonActions;
+    // link 'Add Customer'
+    @FindBy(how = How.LINK_TEXT, using = "Add Customer")
+    private WebElement linkAddCustomer;
+    // link 'Edit Customer'
+    @FindBy(how = How.LINK_TEXT, using = "Edit Customer")
+    private WebElement linkEditCustomer;
+    // link 'Delete Customer'
+    @FindBy(how = How.LINK_TEXT, using = "Delete Customer")
+    private WebElement linkDeleteCustomer;
+    // button 'Logout'
+    @FindBy(how = How.XPATH, using = "//div[5]/div/div/div/div[2]/div[1]/div/div/div[1]/div/table/tbody/tr/td[5]/table/tbody/tr/td[2]/em/button")
+    private WebElement buttonLogout;
+
+    //METHODS
+    public CustomersPage clickActionsButton (WebDriver driver) {
+        // click Customers button
+        buttonActions.click();
+        return this;
+    }
+    public CustomersPage clickAddCustomerLink (WebDriver driver) {
+        // click Add Customer link
+        linkAddCustomer.click();
+        return this;
+    }
+    public CustomersPage clickEditCustomerLink (WebDriver driver) {
+        // click Edit Customer link
+        linkEditCustomer.click();
+        return this;
+    }
+    public CustomersPage clickDeleteCustomerLink (WebDriver driver) {
+        // click Delete Customer link
+        linkDeleteCustomer.click();
+        return this;
+    }
+    public CustomersPage clickLogoutButton (WebDriver driver) {
+        // click Logout button
+        buttonLogout.click();
+        return this;
+    }
+
+    ////////////////////////////////////////////METHODS – BOT STYLE////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////METHODS – BOT STYLE////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////METHODS – BOT STYLE////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////METHODS – BOT STYLE////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////METHODS – BOT STYLE////////////////////////////////////////////////////////////////////
+    LoanAppHelper loanAppHelper = new LoanAppHelper();
+    public CustomersPage clickActionsButton1 (WebDriver driver) {
+        // click Customers button
+        loanAppHelper.clickElementByID(driver, "ext-gen192");
+        return this;
+    }
+
+    public CustomersPage clickAddCustomerLink1 (WebDriver driver) {
+        // click Add Customer link
+        loanAppHelper.clickElementByLinkName(driver, "Add Customer");
+        return this;
+    }
+
+    public CustomersPage clickEditCustomerLink1 (WebDriver driver) {
+        // click Edit Customer link
+        loanAppHelper.clickElementByLinkName(driver, "Edit Customer");
+        return this;
+    }
+
+    public CustomersPage clickDeleteCustomerLink1 (WebDriver driver) {
+        // click Delete Customer link
+        loanAppHelper.clickElementByLinkName(driver, "Delete Customer");
+        return this;
+    }
+
+    public CustomersPage clickLogoutButton1 (WebDriver driver) {
+        // click Logout button
+        loanAppHelper.clickElementByXPath(driver, "//div[5]/div/div/div/div[2]/div[1]/div/div/div[1]/div/table/tbody/tr/td[5]/table/tbody/tr/td[2]/em/button");
+        return this;
+    }
+
+}
+
+
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$((((((((ADD CUSTOMERS PAGE)))))))))$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$((((((((ADD CUSTOMERS PAGE)))))))))$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$((((((((ADD CUSTOMERS PAGE)))))))))$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$((((((((ADD CUSTOMERS PAGE)))))))))$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+package pageobject;
+
+import common.LoanAppHelper;
+import org.checkerframework.checker.units.qual.A;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+
+public class AddCustomerPage {
+
+    // this is a constructor
+    public AddCustomerPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
+
+    // LOCATORS
+    // text field 'First Name'
+    @FindBy(how = How.NAME, using = "FirstName")
+    private WebElement customerFirstName;
+    // text field 'Last Name'
+    @FindBy(how = How.NAME, using = "LastName")
+    private WebElement customerLastName;
+    // button 'Save'
+    @FindBy(how = How.XPATH, using = "//div[2]/div/div/div/div/div/div/div[2]/div/div/table/tbody/tr/td/table/tbody/tr/td[2]")
+    private WebElement buttonSave;
+    // button 'Cancel'
+    @FindBy(how = How.XPATH, using = "//div[2]/div/div/div/div/div/div/div[2]/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]/em/button")
+    private WebElement buttonCancel;
+    // button 'OK' to close warning message
+    @FindBy(how = How.XPATH, using = "//div[2]/div/div/div/div/div/table/tbody/tr/td/table/tbody/tr/td[2]/em/button")
+    private WebElement buttonOK;
+
+    //METHODS
+    public AddCustomerPage setFirstName (WebDriver driver, String FirstName ) {
+        // Enter username
+        customerFirstName.sendKeys(FirstName);
+        return this;
+    }
+    public AddCustomerPage setLastName (WebDriver driver, String LastName ) {
+        // Enter password
+        customerLastName.sendKeys(LastName);
+        return this;
+    }
+    public AddCustomerPage clickSaveButton (WebDriver driver) {
+        // click Save button
+        buttonSave.click();
+        return this;
+    }
+    public AddCustomerPage clickCancelButton (WebDriver driver) {
+        // click Cancel button
+        buttonCancel.click();
+        return this;
+    }
+    public AddCustomerPage clickOKButton (WebDriver driver) {
+        // click OK  button on warning message pop up
+        buttonOK.click();
+        return this;
+    }
+
+    ////////////////////////////////////////////METHODS – BOT STYLE////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////METHODS – BOT STYLE////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////METHODS – BOT STYLE////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////METHODS – BOT STYLE////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////METHODS – BOT STYLE////////////////////////////////////////////////////////////////////
+    LoanAppHelper loanAppHelper = new LoanAppHelper();
+    public AddCustomerPage setFirstName1 (WebDriver driver, String firstName) {
+        // Enter First Name
+        loanAppHelper.setText (driver, "FirstName", firstName);
+        return this;
+    }
+
+    public AddCustomerPage setLastName1 (WebDriver driver, String lastName ) {
+        // Enter Last Name
+        loanAppHelper.setText(driver, "LastName", lastName);
+        return this;
+    }
+    public AddCustomerPage clickSaveButton1 (WebDriver driver) {
+        // click Save button
+        loanAppHelper.clickElementByXPath(driver, "//div[2]/div/div/div/div/div/div/div[2]/div/div/table/tbody/tr/td/table/tbody/tr/td[2]");
+        return this;
+    }
+
+    public AddCustomerPage clickCancelButton1 (WebDriver driver) {
+// click Cancel button
+        loanAppHelper.clickElementByXPath(driver, "//div[2]/div/div/div/div/div/div/div[2]/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]/em/button");
+        return this;
+    }
+
+    public AddCustomerPage clickOKButton1 (WebDriver driver) {
+// click OK button on warning message pop up
+        loanAppHelper.clickElementByXPath(driver, "//div[2]/div/div/div/div/div/table/tbody/tr/td/table/tbody/tr/td[2]/em/button");
+        return this;
+    }
+
+}
